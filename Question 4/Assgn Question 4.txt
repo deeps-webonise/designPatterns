@@ -1,0 +1,58 @@
+/*
+Here we will use the FACTORY DESIGN PATTERN.
+This is because we want to dynamically select and switch to different sorting algorithm at run time
+
+*/
+
+								//FACTORY DESIGN PATTERN
+								
+//Intially create an interface sort 
+
+	public interface Sort{public string fn()}
+
+//We can choose which Sort we want so create classes
+
+
+//1st Sorting Method
+								
+	class Sort1 implements Sort{
+	public string fn(){"Implementing Sort 1"}
+
+//Second Sorting Method
+
+	class Sort2 implements Sort{
+	public string fn(){"Implementing Sort 2"}	
+
+
+						
+						
+//In the base class make a reference as
+
+	Base class{
+	public Sort sortType;
+
+	public tryToSort{
+	return sortType.fn()
+	}
+	}
+
+//In the derived class say Derived 1 and Derived 2 Do this
+
+	class Derived 1{
+	Public Derived 1{
+
+//we have chosen Sort1 for this
+
+		sortType=new Sort1()
+	}
+	}
+
+	class Derived 2{
+	//We have chosen Sort2 for this
+	Public Derived 2{
+		sortType=new Sort2() 
+	}
+}
+	
+
+Then from main we can see which sort will take place at runtime i.e. sort 1 or sort 2					
