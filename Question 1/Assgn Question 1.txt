@@ -1,0 +1,153 @@
+/*
+Here we can see that we have to model a PC and its equipments such that  all components are treated in a uniform way.
+
+So we will use COMPOSITE DESIGN PATTERN which will help us to represent the inner working of every part of the whole PC individually.
+
+
+
+                                                    COMPOSITE DESIGN PATTERN
+												
+									
+*/	
+						
+		
+		
+		//This acts as an interface for all components				
+		public abstract class PCComponent{
+			
+		
+		public void netPrice{};
+		
+		public void powerConsumption{};
+		
+		public void add(PCComponent newPCComponent){};
+		
+		public void remove(PCComponent newPCComponent){};
+		
+		
+		}
+		
+		
+		
+														// NEW CLASS
+
+	public class PCGroup extends PCComponent {
+			//This contains any components added to this arraylist
+
+			
+	String groupName;
+	int price;
+	int powerConsumption;
+	
+	public PCGroup(String newGroupName, int newprice, int newPowerConsumption){
+		
+		groupName = newGroupName;
+		price = newprice;
+		powerConsumption=newPowerConsumption;
+		
+	}
+	
+	public int netPrice{return price};
+		
+	public int powerConsumption{return powerConsumption};
+	
+	public void add(PCComponent newPCComponent) {
+		
+		PCComponents.add(newPCComponent);
+		
+	}
+	
+	public void remove(PCComponent newPCComponent) {
+		
+		PCComponents.remove(newPCComponent);
+		
+	}
+	
+	
+	}
+	
+												// NEW CLASS
+			
+	
+	public class PC extends PCComponent {
+	
+	String  name;
+	int price ;
+	int powerConsumption;
+	
+	
+	public PC(String newName,int newPrice, int newPowerConsumption){
+		name=newName;
+		price = newPCPrice;
+		powerConsumption = newPowerConsumption;
+		
+	}
+	
+	public int netPrice{return price};
+		
+	public int powerConsumption{return powerConsumption};
+	
+	
+	
+		
+		
+	}
+												// NEW CLASS
+											
+	
+	
+	
+	public class PCGenerator {
+	
+	public static void main(String[] args){
+		
+		PCComponent Cabinet = new PCGroup("Cabinet",100,200);
+		
+		PCComponent Chassis = new PCGroup("Chassis",110,220);
+		
+			
+		PCComponent Bus = new PCGroup("Bus",200,400);
+		
+		
+		// Top level component that holds everything
+		
+		PCComponent everyPC = new PCGroup("PC",1000,1000);
+		
+		// Composite that holds individual groups of PC's
+	
+		
+		everyPC.add(Cabinet);
+		
+			Cabinet.add(Chassis);
+		
+			
+				Cabinet.add(Chassis);
+		
+				Chassis.add(new PC("Floppy",50, 50));
+				Chassis.add(new PC("CPU", 50,50));
+				Chassis.add(new PC("Memory", 50,50));
+				Chassis.add(new PC("Bus", 50,50));
+				Chassis.add(new PC("PowerSupply", 50,50));
+		
+		
+					Bus.add(new PC("NetworkCard", 50,50));
+		
+		
+	
+		
+		
+		
+			
+	}
+	
+}
+	
+	
+	
+	
+
+		
+		
+		
+		
+		
