@@ -1,0 +1,11 @@
+/*
+We will use DECORATOR PATTERN in this case because we dont have to rewrite the old code but extend with new code
+
+This is better than inhertance because we dont need to extend our code but have to write new classes.
+
+
+										//DECORATOR PATTERN
+
+
+
+*/
