@@ -1,0 +1,110 @@
+/*
+	Here we have a different configurations of PC.We have to choose the right one at runtime.
+	
+	Also we have to hide the implementation details
+	
+	So we will use ABSTRACT FACTORY DESIGN PATTERN
+	
+*/
+									
+									
+									//ABSTRACT FACTORY DESIGN PATTERN
+									
+									//PSEUDO CODE
+
+
+public abstract class PC {
+	
+	public String name;
+	
+	public void setName(String newName) { name = newName; }
+
+	
+}
+
+
+
+public class TowerPC extends PC {
+	
+	public TowerPC(){
+		
+		setName("TowerPC");
+		
+	}
+	
+}
+
+
+public class DesktopPC extends PC {
+	
+	public DesktopPC(){
+		
+		setName("DesktopPC");
+		
+		
+		
+	}
+	
+}
+
+
+
+
+// By encapsulating PC creation, we only have one
+// place to make modifications
+
+public class PCFactory{
+	
+	
+	
+	public PC makePC(String newPCType){
+		
+		PC newPC = null;
+		
+		if (newPCType.equals("TowerPC")){
+			
+			return new TowerPC();
+			
+		} else 
+		
+		if (newPCType.equals("DesktopPC")){
+			
+			return new DesktopPC();
+			
+		}
+	 else return null;
+		
+	}
+	
+}
+
+
+public class PCTesting {
+
+	public static void main(String[] args){
+		
+		// Create the factory object
+		PCFactory shipFactory = new PCFactory();
+		
+		// PC object
+		
+		PC thePC = null;
+		
+		Scanner userInput = new Scanner(System.in);
+		
+		System.out.print("What type of PC? (DestopPC / TowerPC ");
+		
+		if (userInput.hasNextLine()){
+			
+			String typeOfPC = userInput.nextLine();
+		
+			thePC = PCFactory.makePC(typeOfPC);
+			
+		}
+		
+		
+		
+	}
+
+	
+}
