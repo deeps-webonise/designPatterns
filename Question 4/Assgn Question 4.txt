@@ -1,10 +1,10 @@
 /*
-Here we will use the FACTORY DESIGN PATTERN.
+Here we will use the STRATEGY DESIGN PATTERN.
 This is because we want to dynamically select and switch to different sorting algorithm at run time
 
 */
 
-								//FACTORY DESIGN PATTERN
+								//STRATEGY DESIGN PATTERN
 								
 //Intially create an interface sort 
 

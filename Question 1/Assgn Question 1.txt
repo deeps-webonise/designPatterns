@@ -16,9 +16,9 @@ So we will use COMPOSITE DESIGN PATTERN which will help us to represent the inne
 		public abstract class PCComponent{
 			
 		
-		public void netPrice{};
+		public int netPrice{};
 		
-		public void powerConsumption{};
+		public int powerConsumption{};
 		
 		public void add(PCComponent newPCComponent){};
 		
